@@ -78,7 +78,10 @@
         \tableofcontents[currentsection]
     \end{frame}
 }
-
+\newcommand{\du}{\Diamond_\uparrow}
+\newcommand{\dl}{\Diamond_\leftarrow}
+\newcommand{\bu}{\Box_\uparrow}
+\newcommand{\bl}{\Box_\leftarrow}
 \title[Axiomatic Potentialism]{Axiomatic Potentialism} 
 % The short title appears at the bottom of every slide, 
 % the full title is only on the title page
@@ -263,34 +266,76 @@ prefixing all universal quantifiers by a $\Box$
     \item In fact ZFC interprets $\mathsf{L}$ as well.
 \end{itemize}
 \onslide<2->
-\begin{block}{$t(\varphi)(\alpha) \mapsto \psi$}
+\begin{block}{$t : \mathcal{L}_0 \times V \to \mathcal{L}_\in, (\varphi, T) \mapsto \psi(T)$}
     \begin{itemize}
         \item<3-> assign plural variables odd numbered variables $t(X)$.
         \item<4-> Membership claims on sets, propositional connectives = id 
-        \item<5-> $t(Xx)(\alpha) := x \in t(X)$
-        \item<6-> $t(\forall x \varphi)(\alpha) := \forall x \in V_\alpha t(\varphi)(\alpha)$
-        \item<7-> $t(\Box \varphi)(\alpha) := \forall \beta \geq \alpha t(\varphi)(\beta)$
+        \item<5-> $t(Xx)(T) := x \in t(X)$
+        \item<6-> $t(\forall x \varphi)(T) := \forall x \in T [t(\varphi)(T)]$
+        \item<7-> $t(\forall X \varphi)(T) := \forall x \subseteq T [t(\varphi)(T)]$
+        \item<8-> $t(\Box \varphi)(\alpha) := \forall S \supseteq T [Tran S \rightarrow t(\varphi)(S)]$
     \end{itemize}
 \end{block}
-\onslide<8->
+\onslide<9->
 \begin{block}{Theorem}
-  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash t(\varphi)(0)$  
+  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash t(\varphi)(\emptyset)$  
 \end{block}
 \end{frame}
-
+\begin{frame}
+    \frametitle{Mini-conclusion}
+\onslide<2->
+\begin{block}{Equivalence}
+    We have an exact proof-theoretic equivalence, $\mathsf{L} \equiv ZFC$.
+\end{block}
+\end{frame}
 
 \section{Height and Width Potentialism}
 \begin{frame}
     \frametitle{Motivation}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    \begin{itemize}
+        \item<2->   Imagine one has the ability to take things and 
+                    make a set containing them.
+        \item<3->   Imagine one is also able to take a partial order and add a filter 
+                    meeting all its (current) dense sets; 
+        \item<4->   Or, equivalently, to take some things and add an enumerating function.
+        \item<5->   Axiomatize this conception and relate it to standard set theory.
+    \end{itemize}
 \end{frame}
 \begin{frame}
-    \frametitle{Axioms}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    \frametitle{Language}
+    \begin{block}{The Language $\mathcal{L}_1$}
+        \begin{itemize}
+            \item object variables $x, y, z$
+            \item<2-> plural variables $X, Y, Z$
+            \item<3-> $\wedge, \neg, \forall, =$
+            \item<4-> $\bu$, $\bl$, $\Box$
+            \item<5-> $\in$
+        \end{itemize} 
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Axioms for the theory $\mathsf{M}$}
+    \begin{block}{Logical Axioms}
+    \begin{enumerate}
+        \item<2-> Free FO logic
+        \item<3-> $\mathsf{S4.2}$ modal logic + CBF for each modal
+        \item<4-> $\Box \varphi \rightarrow \bu \varphi$, same for $\bl$.
+        \item<4-> Ext for $X$, $\Diamond Xx \rightarrow \Box Xx$, 
+        $\Diamond \exists x[Xx \wedge x = y] \rightarrow \exists x[Xx \wedge x = y]$,
+        Choice, Comp
+    \end{enumerate}
+    \end{block}
+    \onslide<5->
+    \begin{block}{Set-theoretic axioms}
+        \begin{enumerate}
+        \item<6-> Extensionality, $\in$-rigidity, foundation
+        \item<7-> $\Box \forall X \du \exists x [Set(x, X)]$
+        \item<9-> $\du \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
+        \item<10-> $\du \exists X \bu \forall x[Xx \leftrightarrow x \subseteq y]$
+        \item<11-> $\Box \forall x, X [D(x, X)\rightarrow \dl \exists g[Fmeets(g, xx)]]$
+        \item<12-> A modal translation of replacement
+        \end{enumerate}
+    \end{block}
 \end{frame}
 \begin{frame}
     \frametitle{Inconsistency?}
