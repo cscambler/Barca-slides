@@ -66,6 +66,7 @@
 \usepackage{booktabs} 
 \usepackage{multicol}
 \usepackage{tikz}
+\usepackage{bussproofs}
 \setbeamercolor{block title}{bg=red!30,fg=black}
 \setbeamertemplate{itemize item}{\color{red!35}$\blacksquare$}
 \setbeamercolor{local structure}{fg=darkred}
@@ -148,34 +149,135 @@ Oxford University \\
 
 \begin{frame}
     \frametitle{Motivation}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    \begin{itemize}
+        \item<2->   Imagine one has the ability to take things and 
+                    make a set containing them.
+        \item<3->   Imagine one is able to do this arbitrarily many times.
+        \item<4->   Axiomatize this conception and relate it to standard set theory.
+    \end{itemize}
 \end{frame}
+
 \begin{frame}
-    \frametitle{Axioms}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    \frametitle{Language}
+    \begin{block}{The Language $\mathcal{L}_0$}
+        \begin{itemize}
+            \item object variables $x, y, z$
+            \item<2-> plural variables $X, Y, Z$
+            \item<3-> $\wedge, \neg, \forall, =$
+            \item<4-> $\Box$
+            \item<5-> $\in$
+        \end{itemize} 
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Axioms for the theory $\mathsf{L}$}
+    \begin{block}{Logical Axioms}
+    \begin{enumerate}
+        \item<2-> Free FO logic
+        \item<3-> $\mathsf{S4.2}$ modal logic + CBF
+        \item<4-> Ext for $X$, $\Diamond Xx \rightarrow \Box Xx$, 
+        $\Diamond \exists x[Xx \wedge x = y] \rightarrow \exists x[Xx \wedge x = y]$,
+        Choice, Comp
+    \end{enumerate}
+    \end{block}
+    \onslide<5->
+    \begin{block}{Set-theoretic axioms}
+        \begin{enumerate}
+        \item<6-> Extensionality, $\in$-rigidity, foundation
+        \item<7-> $\Box \forall X \Diamond \exists x [Set(x, X)]$
+        \item<9-> $\Diamond \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
+        \item<10-> $\Diamond \exists X \Box \forall x[Xx \leftrightarrow x \subseteq y]$
+        \item<11-> A modal translation of replacement
+        \end{enumerate}
+    \end{block}
+    \onslide<8-> NB: $\Box \exists X \neg \exists y [Set(x, X)]$
 \end{frame}
 \begin{frame}
     \frametitle{Inconsistency?}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
-\end{frame}
-\begin{frame}
-    \frametitle{A Model}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    Standard modal model theory validates the rule
+    \begin{prooftree}
+        \AxiomC{$\varphi \rightarrow \Box \psi$}
+        \UnaryInfC{$\varphi \rightarrow \Box \forall x \psi$}
+    \end{prooftree}
+\onslide<2->
+    \begin{equation}
+        (Xx \leftrightarrow x \not \in x) \rightarrow \forall y \Box \neg Set(y, X)
+    \end{equation}
+\onslide<3->
+    \begin{equation}
+        (Xx \leftrightarrow x \not \in x) \rightarrow \Box \neg Set(y, X)
+    \end{equation}
+\onslide<4->
+    \begin{equation}
+        (Xx \leftrightarrow x \not \in x) \rightarrow \Box \forall y \neg Set(y, X)
+    \end{equation}
+\onslide<5->
+{\bf Hence the need for free logic.}
 \end{frame}
 \begin{frame}
     \frametitle{Connection to Standard Set Theory}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+\onslide<2->
+\begin{block}{Mirroring theorem}
+\onslide<3-> For $\varphi$ in $\mathcal{L}_\in$, let $\varphi^\diamond$ be the result of 
+prefixing all universal quantifiers by a $\Box$ 
+(and existential quantifiers by $\Diamond$.) Then we have 
+\onslide<4->
+\[
+    \Gamma \vdash_{FOL} \varphi 
+    \Leftrightarrow 
+    \Gamma^\diamond \vdash_{\mathsf{L}} \varphi^\diamond
+\]
+\end{block}
+\onslide<5-> Note on replacement$^\diamond$.
+\onslide<6->
+\begin{block}{Linnebo Interpretation Theorem}
+  $\mathsf{L} \vdash ZFC^\diamond$.  
+\end{block}
+\onslide<7-> Proof: use mirroring.
 \end{frame}
+\begin{frame}
+    \frametitle{Axioms for the theory $\mathsf{L}$}
+    \begin{block}{Logical Axioms}
+    \begin{enumerate}
+        \item Free FO logic
+        \item $\mathsf{S4.2}$ modal logic + CBF
+        \item Ext for $X$, $\Diamond Xx \rightarrow \Box Xx$, 
+        $\Diamond \exists x[Xx \wedge x = y] \rightarrow \exists x[Xx \wedge x = y]$,
+        Choice, Comp
+    \end{enumerate}
+    \end{block}
+    \begin{block}{Set-theoretic axioms}
+        \begin{enumerate}
+        \item Extensionality, $\in$-rigidity, foundation
+        \item $\Box \forall X \Diamond \exists x [Set(x, X)]$
+        \item $\Diamond \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
+        \item $\Diamond \exists X \Box \forall x[Xx \leftrightarrow x \subseteq y]$
+        \item A modal translation of replacement
+        \end{enumerate}
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Connection to Standard Set Theory}
+\begin{itemize}
+    \item In fact ZFC interprets $\mathsf{L}$ as well.
+\end{itemize}
+\onslide<2->
+\begin{block}{$t(\varphi)(\alpha) \mapsto \psi$}
+    \begin{itemize}
+        \item<3-> assign plural variables odd numbered variables $t(X)$.
+        \item<4-> Membership claims on sets, propositional connectives = id 
+        \item<5-> $t(Xx)(\alpha) := x \in t(X)$
+        \item<6-> $t(\forall x \varphi)(\alpha) := \forall x \in V_\alpha t(\varphi)(\alpha)$
+        \item<7-> $t(\Box \varphi)(\alpha) := \forall \beta \geq \alpha t(\varphi)(\beta)$
+    \end{itemize}
+\end{block}
+\onslide<8->
+\begin{block}{Theorem}
+  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash t(\varphi)(0)$  
+\end{block}
+\end{frame}
+
 
 \section{Height and Width Potentialism}
 \begin{frame}
