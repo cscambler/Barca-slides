@@ -219,7 +219,28 @@ Oxford University \\
 {\bf Hence the need for free logic.}
 \end{frame}
 \begin{frame}
-    \frametitle{Connection to Standard Set Theory}
+    \frametitle{Relative Consistency}
+\begin{itemize}
+    \item In fact ZFC interprets $\mathsf{L}$.
+\end{itemize}
+\onslide<2->
+\begin{block}{$t : \mathcal{L}_0 \times V \to \mathcal{L}_\in, (\varphi, T) \mapsto \psi(T)$}
+    \begin{itemize}
+        \item<3-> assign plural variables odd numbered variables $t(X)$.
+        \item<4-> Membership claims on sets, propositional connectives = id 
+        \item<5-> $t(Xx)(T) := x \in t(X)$
+        \item<6-> $t(\forall x \varphi)(T) := \forall x \in T [t(\varphi)(T)]$
+        \item<7-> $t(\forall X \varphi)(T) := \forall x \subseteq T [t(\varphi)(T)]$
+        \item<8-> $t(\Box \varphi)(t) := \forall S \supseteq T [Tran (S) \rightarrow t(\varphi)(S)]$
+    \end{itemize}
+\end{block}
+\onslide<9->
+\begin{block}{Theorem}
+  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash t(\varphi)(\emptyset)$  
+\end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Converse Translation}
 \onslide<2->
 \begin{block}{Mirroring theorem}
 \onslide<3-> For $\varphi$ in $\mathcal{L}_\in$, let $\varphi^\diamond$ be the result of 
@@ -260,27 +281,7 @@ prefixing all universal quantifiers by a $\Box$
         \end{enumerate}
     \end{block}
 \end{frame}
-\begin{frame}
-    \frametitle{Connection to Standard Set Theory}
-\begin{itemize}
-    \item In fact ZFC interprets $\mathsf{L}$ as well.
-\end{itemize}
-\onslide<2->
-\begin{block}{$t : \mathcal{L}_0 \times V \to \mathcal{L}_\in, (\varphi, T) \mapsto \psi(T)$}
-    \begin{itemize}
-        \item<3-> assign plural variables odd numbered variables $t(X)$.
-        \item<4-> Membership claims on sets, propositional connectives = id 
-        \item<5-> $t(Xx)(T) := x \in t(X)$
-        \item<6-> $t(\forall x \varphi)(T) := \forall x \in T [t(\varphi)(T)]$
-        \item<7-> $t(\forall X \varphi)(T) := \forall x \subseteq T [t(\varphi)(T)]$
-        \item<8-> $t(\Box \varphi)(\alpha) := \forall S \supseteq T [Tran S \rightarrow t(\varphi)(S)]$
-    \end{itemize}
-\end{block}
-\onslide<9->
-\begin{block}{Theorem}
-  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash t(\varphi)(\emptyset)$  
-\end{block}
-\end{frame}
+
 \begin{frame}
     \frametitle{Mini-conclusion}
 \onslide<2->
@@ -337,23 +338,98 @@ prefixing all universal quantifiers by a $\Box$
         \end{enumerate}
     \end{block}
 \end{frame}
+\begin{frame}{Some initial observations}
+    \begin{itemize}
+        \item<2-> $\mathsf{M}$ interprets ZFC under the translation 
+                    $\varphi \mapsto \varphi^{\diamond_\uparrow}$. 
+        \item<3-> $\mathsf{M}$ interprets ZFC$^-$ under the translation 
+                    $\varphi \mapsto \varphi^\diamond$.
+        \item<4-> $\mathsf{M}$ proves $\neg Pow^\diamond$.
+        \item<5-> $\mathsf{M}$ proves $V = HC^\diamond$ and hence $SOA^\diamond$.
+        \item<5-> $\mathsf{M}$ proves it is possible for the continuum 
+                    to exist and have a cardinality at least as great as 
+                    any $\aleph$ number whose existence is provable 
+                    in ZFC.
+    \end{itemize}
+\end{frame}
 \begin{frame}
     \frametitle{Inconsistency?}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+The axioms imply 
+\[
+    \Diamond \exists x (\Diamond_\leftarrow \exists y[y \subseteq x \wedge y = z] \wedge \Box_\uparrow \neg \exists y[y = z])
+\]
+\onslide<2-> 
+abbreviate the formula in parentheses by $\Psi(x, z)$. 
+
+\onslide<3-> 
+By comprehension,
+\[
+    \Diamond \exists x \Psi(x, z) \wedge \exists X \forall y[Xy \leftrightarrow y \in z]
+\]
+
+\onslide<4-> 
+By height potentialism/rigidty,
+\[
+    \Diamond \exists x \Psi(x, z) \wedge \du \exists w \forall y[y \in w \leftrightarrow y \in z]
+\]
+\onslide<5-> But then the rigidity/extensionality imply $w = z$ after all, 
+so we have a contradiction.
 \end{frame}
 \begin{frame}
-    \frametitle{A Model}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    \frametitle{Resolution}
+The argument just sketched uses comprehension with arbitrary parameters:
+\[\exists X\forall y[Xy \leftrightarrow y \in z]\]
+\onslide<2-> And in the crucial application, it applies when we have no 
+\emph{a priori} guarantee $z$ even exists (indeed this is what we are trying 
+to establish.)
+\onslide<3-> Natural solution: restrict comp to closed form:
+\[
+    \Box \forall z \Box \forall Z \exists X \forall y[Xy \leftrightarrow \varphi(y, z, Z)]
+\]
+\onslide<4-> Amounts to restricting ourselves to parameters that exist at 
+the world of evaluation.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Relative Consistency}
+\begin{block}{Intuitive idea}
+    \onslide<2-> (From now on, I will ignore the difference between SOA 
+    and ZFC$^-$+ V = HC. Replacement is formulated as collection.)
+    \begin{itemize}
+    \item<3-> We will use the fact that $\mathsf{T}$ = SOA + $\Pi_1^1$-PSP 
+    $\equiv$ ZFC, and in fact $\mathsf{T}$ proves that $L[r]$ is a 
+    model of ZFC for every real $r$. 
+    \item<4-> 
+    Our translation will be doubly parameterized, once by a real and 
+    once by a transitive set.
+    \item<5->
+    Our interpretation for $\du$ will involve holding $r$ fixed and 
+    climbing transitive sets in $L[r]$;
+    \item<6-> 
+    while our interpretation for $\dl$ will involve allowing new reals 
+    to be added but not extending the height of the transitive set parameter.
+    \end{itemize}
+\end{block}
 \end{frame}
 \begin{frame}
-    \frametitle{Connection to Standard Set Theory}
-    Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-    
-    Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+    \frametitle{Relative consistency}
+    \onslide<2-> Let $M \vDash SOA + \Pi_1^1 PSP$.
+    \onslide<3->
+    \begin{block}{$t : \mathcal{L}_1 \times M \times \mathbb{R}^M \to \mathcal{L}_\in, (\varphi, T, r) \mapsto \psi(T, r)$}
+        \begin{itemize}
+            \item<4-> assign plural variables odd numbered variables $t(X)$.
+            \item<5-> Membership claims on sets, propositional connectives = id 
+            \item<6-> $t(Xx)(T, r) := x \in t(X)$
+            \item<7-> $t(\forall x \varphi)(T, r) := \forall x \in T [t(\varphi)(T, r)]$
+            \item<8-> $t(\forall X \varphi)(T, r) := \forall x \subseteq T [x \in L[r] \rightarrow t(\varphi)(T, r)]$
+            \item<9-> $t(\bu \varphi)(T, r) := \forall S \supseteq T [Tran(S) \wedge S \in L[r] \rightarrow t(\varphi)(S, r)]$
+            \item<10-> $t(\bl \varphi)(T, r) := \forall s[ r \in L[s] \rightarrow \forall S[ S \leq T \wedge S \in L[s] \rightarrow t(\varphi)(S, s)]$
+        \end{itemize}
+    \end{block}
+    \onslide<11->
+\begin{block}{Theorem}
+  $\mathsf{M} \vdash \varphi$ implies $\mathsf{T} \vdash t(\varphi)(\emptyset, 0)$  
+\end{block}
 \end{frame}
 
 \begin{frame}
