@@ -423,7 +423,7 @@ the world of evaluation.
             \item<7-> $t(\forall x \varphi)(T, r) := \forall x \in T [t(\varphi)(T, r)]$
             \item<8-> $t(\forall X \varphi)(T, r) := \forall x \subseteq T [x \in L[r] \rightarrow t(\varphi)(T, r)]$
             \item<9-> $t(\bu \varphi)(T, r) := \forall S \supseteq T [Tran(S) \wedge S \in L[r] \rightarrow t(\varphi)(S, r)]$
-            \item<10-> $t(\bl \varphi)(T, r) := \forall s[ r \in L[s] \rightarrow \forall S[ S \leq T \wedge S \in L[s] \rightarrow t(\varphi)(S, s)]$
+            \item<10-> $t(\bl \varphi)(T, r) := \forall s[ r \in L[s] \rightarrow \forall S[ S \leq T \wedge S \in L[s] \rightarrow t(\varphi)(S, s)]]$
         \end{itemize}
     \end{block}
     \onslide<11->
@@ -431,7 +431,25 @@ the world of evaluation.
   $\mathsf{M} \vdash \varphi$ implies $\mathsf{T} \vdash t(\varphi)(\emptyset, 0)$  
 \end{block}
 \end{frame}
-
+\begin{frame}
+    \frametitle{Converse Translation}
+\onslide<2->
+\begin{block}{Theorem}
+$\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
+\end{block}
+\onslide<3->
+\begin{block}{Proof (sketch)}
+    \onslide<4-> Given any possible real $r$, one can show $\Diamond \exists x[ x = \mathbb{R}^{L[r]}]$
+    using the $\Diamond_\uparrow$ translation of ZFC and some absoluteness lemmas. 
+    \onslide<5-> One can also show by forcing that ``$\Diamond \mathbb{R}^{L[r]} \text{ is countable}$.''
+    \onslide<6-> This yields the $\Diamond$-translation of ``$\mathbb{R}^{L[r]}$ exists for every $r$, and is coutnable.''
+    \onslide<7-> By an old result of Solovay, if $A$ is $\Sigma^1_2$ definable in $r$, then 
+    either $A \in L[r]$ or $A$ contains a perfect subset. Hence the above implies (in standard 
+    non modal set theory) that the perfect set property for $\Sigma^1_2$ sets holds, i.e. $\Pi_1^1 PSP$.
+    \onslide<8-> But now the mirroring theorem implies the corresponding modal result.
+    
+\end{block}
+\end{frame}
 \begin{frame}
 \frametitle{References}
 \footnotesize{
