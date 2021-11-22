@@ -217,6 +217,9 @@ Oxford University \\
     \end{equation}
 \onslide<5->
 {\bf Hence the need for free logic.}
+\onslide<6-> (UI = $\forall x [\forall y \varphi y \rightarrow \varphi x]$. 
+
+\onslide<7-> Instantiation requires assumption of existence.)
 \end{frame}
 \begin{frame}
     \frametitle{Relative Consistency}
@@ -321,16 +324,16 @@ prefixing all universal quantifiers by a $\Box$
         \item<2-> Free FO logic
         \item<3-> $\mathsf{S4.2}$ modal logic + CBF for each modal
         \item<4-> $\Box \varphi \rightarrow \bu \varphi$, same for $\bl$.
-        \item<4-> Ext for $X$, $\Diamond Xx \rightarrow \Box Xx$, 
+        \item<5-> Ext for $X$, $\Diamond Xx \rightarrow \Box Xx$, 
         $\Diamond \exists x[Xx \wedge x = y] \rightarrow \exists x[Xx \wedge x = y]$,
         Choice, Comp
     \end{enumerate}
     \end{block}
-    \onslide<5->
+    \onslide<6->
     \begin{block}{Set-theoretic axioms}
         \begin{enumerate}
-        \item<6-> Extensionality, $\in$-rigidity, foundation
-        \item<7-> $\Box \forall X \du \exists x [Set(x, X)]$
+        \item<7-> Extensionality, $\in$-rigidity, foundation
+        \item<8-> $\Box \forall X \du \exists x [Set(x, X)]$
         \item<9-> $\du \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
         \item<10-> $\du \exists X \bu \forall x[Xx \leftrightarrow x \subseteq y]$
         \item<11-> $\Box \forall x, X [D(x, X)\rightarrow \dl \exists g[Fmeets(g, xx)]]$
@@ -443,22 +446,17 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
     using the $\Diamond_\uparrow$ translation of ZFC and some absoluteness lemmas. 
     \onslide<5-> One can also show by forcing that ``$\Diamond \mathbb{R}^{L[r]} \text{ is countable}$.''
     \onslide<6-> This yields the $\Diamond$-translation of ``$\mathbb{R}^{L[r]}$ exists for every $r$, and is coutnable.''
-    \onslide<7-> By an old result of Solovay, if $A$ is $\Sigma^1_2$ definable in $r$, then 
-    either $A \in L[r]$ or $A$ contains a perfect subset. Hence the above implies (in standard 
-    non modal set theory) that the perfect set property for $\Sigma^1_2$ sets holds, i.e. $\Pi_1^1 PSP$.
+    \onslide<7-> By an old result of Solovay, if $A$ is $\Pi^1_1$ definable in $r$, then 
+    either $A \in L[r]$ or $A$ contains a perfect subset. This easiy implies $Pi_1^1 PSP$.
     \onslide<8-> But now the mirroring theorem implies the corresponding modal result.
     
 \end{block}
 \end{frame}
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99}
-    \bibitem[Smith, 2012]{p1} John Smith (2012)
-    \newblock Title of the publication
-    \newblock \emph{Journal Name} 12(3), 45 -- 678.
-    \end{thebibliography}
-}
+\section{Concluding Remarks}
+\begin{frame}{Conclusions}
+    Equi Consistency
+    bi-interpretation
+    height-width fungibility: determinacy vs large cardinals
 \end{frame}
 
 \begin{frame}
