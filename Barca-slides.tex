@@ -216,10 +216,11 @@ Oxford University \\
         (Xx \leftrightarrow x \not \in x) \rightarrow \Box \forall y \neg Set(y, X)
     \end{equation}
 \onslide<5->
-{\bf Hence the need for free logic.}
-\onslide<6-> (UI = $\forall x [\forall y \varphi y \rightarrow \varphi x]$. 
+ Hence the need for free logic.
 
-\onslide<7-> Instantiation requires assumption of existence.)
+\onslide<6-> UI = $\forall x [\forall y \varphi y \rightarrow \varphi x]$; 
+
+\onslide<7-> Instantiation requires assumption of existence.
 \end{frame}
 \begin{frame}
     \frametitle{Relative Consistency}
@@ -291,6 +292,10 @@ prefixing all universal quantifiers by a $\Box$
 \begin{block}{Equivalence}
     We have an exact proof-theoretic equivalence, $\mathsf{L} \equiv ZFC$.
 \end{block}
+\onslide<3->
+\begin{block}{Bi-interpretation}
+    In fact, ZFC $\vdash t(\phi^\diamond)(\emptyset) \leftrightarrow \phi$, and conversely.
+\end{block}
 \end{frame}
 
 \section{Height and Width Potentialism}
@@ -349,7 +354,7 @@ prefixing all universal quantifiers by a $\Box$
                     $\varphi \mapsto \varphi^\diamond$.
         \item<4-> $\mathsf{M}$ proves $\neg Pow^\diamond$.
         \item<5-> $\mathsf{M}$ proves $V = HC^\diamond$ and hence $SOA^\diamond$.
-        \item<5-> $\mathsf{M}$ proves it is possible for the continuum 
+        \item<6-> $\mathsf{M}$ proves it is possible for the continuum 
                     to exist and have a cardinality at least as great as 
                     any $\aleph$ number whose existence is provable 
                     in ZFC.
@@ -446,17 +451,31 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
     using the $\Diamond_\uparrow$ translation of ZFC and some absoluteness lemmas. 
     \onslide<5-> One can also show by forcing that ``$\Diamond \mathbb{R}^{L[r]} \text{ is countable}$.''
     \onslide<6-> This yields the $\Diamond$-translation of ``$\mathbb{R}^{L[r]}$ exists for every $r$, and is coutnable.''
-    \onslide<7-> By an old result of Solovay, if $A$ is $\Pi^1_1$ definable in $r$, then 
-    either $A \in L[r]$ or $A$ contains a perfect subset. This easiy implies $Pi_1^1 PSP$.
+    \onslide<7-> By a result of Solovay, if $A$ is $\Pi^1_1$ definable in $r$, then 
+    either $A \in L[r]$ or $A$ contains a perfect subset. This easily implies $Pi_1^1 PSP$.
     \onslide<8-> But now the mirroring theorem implies the corresponding modal result.
     
 \end{block}
 \end{frame}
 \section{Concluding Remarks}
 \begin{frame}{Conclusions}
-    Equi Consistency
-    bi-interpretation
-    height-width fungibility: determinacy vs large cardinals
+    \onslide<2->
+    \begin{block}{Equivalence}
+        We have an exact proof-theoretic equivalence, $\mathsf{M} \equiv SOA + \Pi_1^1 PSP$.
+
+        \onslide<3-> The latter is in fact equiconsistent with ZFC. $\mathsf{M} \equiv \mathsf{L} \equiv ZFC$.
+    \end{block}
+    \onslide<4->
+    \begin{block}{Bi-interpretation}
+        However, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\diamond)(\emptyset, 0) \leftrightarrow \phi$, and conversely.
+    \end{block}
+    \onslide<5->
+    \begin{block}{Philosophical Interest?}
+        There seems to be some relation between height + width potentialism 
+        and topological regularity + countabilism.
+
+        \onslide<6-> The `parsimony and order' perspective on the universe?
+    \end{block}
 \end{frame}
 
 \begin{frame}
