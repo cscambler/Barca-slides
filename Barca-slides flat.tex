@@ -1,0 +1,487 @@
+\documentclass[handout]{beamer}
+
+\mode<presentation> {
+
+%%%%%%%THEME%%CHOICE%%%%%%
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%%%%%COLOUR%%PALLETTE%%%%%
+
+%\usecolortheme{albatross}
+\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%%%%%REMOVE%%FOOTER%%%%%
+
+%\setbeamertemplate{footline} 
+
+%%%%%REPLACE%%FOOTER%%WITH%%SLIDE%%COUNT%%%%%
+
+%\setbeamertemplate{footline}[page number] 
+
+%%%%%REMOVE%%NAVI%%SYMBOLS%%%%%
+
+%\setbeamertemplate{navigation symbols}{} 
+}
+
+\usepackage{graphicx} 
+\usepackage{booktabs} 
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{bussproofs}
+\setbeamercolor{block title}{bg=red!30,fg=black}
+\setbeamertemplate{itemize item}{\color{red!35}$\blacksquare$}
+\setbeamercolor{local structure}{fg=darkred}
+%show TOCs highlighting current section at beginning of section
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\newcommand{\du}{\Diamond_\uparrow}
+\newcommand{\dl}{\Diamond_\leftarrow}
+\newcommand{\bu}{\Box_\uparrow}
+\newcommand{\bl}{\Box_\leftarrow}
+\title[Axiomatic Potentialism]{Axiomatic Potentialism} 
+% The short title appears at the bottom of every slide, 
+% the full title is only on the title page
+
+\author{Chris Scambler} 
+\institute[ASC] 
+% Your institution as it will appear on the bottom of every slide, 
+% may be shorthand to save space
+{
+All Souls College, \\
+Oxford University \\ 
+\medskip
+\textit{chris.scambler@all-souls.ox.ac.uk} 
+}
+\date{\today} 
+
+\begin{document}
+
+\begin{frame}
+\titlepage 
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} 
+\tableofcontents 
+\end{frame}
+\section{Background}
+
+\begin{frame}
+\frametitle{Potentialism}
+\onslide<2->
+\begin{block}
+    {\bf Potentialism} is the idea that a mathematical object (e.g. a set) is the sort 
+    of thing that may \emph{merely possibly} exist.
+\end{block}
+\begin{itemize}
+    \item<3-> E.g. a geometric object as a figure one can construct
+    \item<4-> A set as a certain sort of data structure one could assemble
+    \item<5-> Or perhaps a structure that is instantiated given enough objects.
+    \item<6-> Ideas like this have deep roots in set theory, e.g. Zermelo and even Cantor
+    \item<7-> Still deeper roots in mathematics in general.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Potentialism}
+    \begin{itemize}
+        \item The recent literature has seen two branches of study here:
+        \begin{enumerate}
+            \item<2->   Model-theoretic: study Kripke models whose worlds are 
+                        structures with the accessibility relation (some refinement of)
+                        the substructure relation.
+            \item<3->   Axiomatic: Develop axiom systems designed to characterize 
+                        this or that form of potentialism directly, without appeal to models.
+        \end{enumerate}
+        \item<4->   In each case interesting questions arise concerning the relation 
+                    between assertions in the modal framework and in first order set theory.
+        \item<5->   E.g. Hamkins and Linnebo showed in MT potentialism with the structures
+                    initial segments of $V$ that $S5$ at a world $V_\kappa$ is equivalent 
+                    to $\Sigma_3$ correctness of $\kappa$.
+        \item<6->   Here we will be focused on axiomatic potentialism, and on 
+                    relations between potentialist axiom systems and their first order counterparts.
+    \end{itemize}
+    
+\end{frame}
+
+\section{Warm Up: Height Potentialism}
+
+\begin{frame}
+    \frametitle{Motivation}
+    \begin{itemize}
+        \item<2->   Imagine one has the ability to take things and 
+                    make a set containing them.
+        \item<3->   Imagine one is able to do this arbitrarily many times.
+        \item<4->   Axiomatize this conception and work out its non-modal counterpart.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Language}
+    \begin{block}{The Language $\mathcal{L}_0$}
+        \begin{itemize}
+            \item object variables $x, y, z$
+            \item<2-> plural variables $X, Y, Z$
+            \item<3-> $\wedge, \neg, \forall, =$
+            \item<4-> $\Box$
+            \item<5-> $\in$
+        \end{itemize} 
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Axioms for the theory $\mathsf{L}$}
+    \begin{block}{Logical Axioms}
+    \begin{enumerate}
+        \item<2-> Free FO logic
+        \item<3-> $\mathsf{S4.2}$ modal logic + CBF
+        \item<4-> $\forall z[Xz \leftrightarrow Yz] \rightarrow X = Y$, rigidity,
+        Choice, Comp
+    \end{enumerate}
+    \end{block}
+    \onslide<5->
+    \begin{block}{Set-theoretic axioms}
+        \begin{enumerate}
+        \item<6-> Extensionality, $\in$-rigidity, foundation
+        \item<7-> $\Box \forall X \Diamond \exists x [Set(x, X)]$
+        \item<8-> $\Diamond \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
+        \item<9-> $\Diamond \exists X \Box \forall x[Xx \leftrightarrow x \subseteq y]$
+        \item<10-> A modal translation of replacement
+        \end{enumerate}
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Inconsistency?}
+    Standard modal model theory validates the rule
+    \begin{prooftree}
+        \AxiomC{$\varphi \rightarrow \Box \psi$}
+        \UnaryInfC{$\varphi \rightarrow \Box \forall x \psi$}
+    \end{prooftree}
+\onslide<2->
+    \begin{equation}
+        (Xx \leftrightarrow x \not \in x) \rightarrow \forall y \Box \neg Set(y, X)
+    \end{equation}
+\onslide<3->
+    \begin{equation}
+        (Xx \leftrightarrow x \not \in x) \rightarrow \Box \neg Set(y, X)
+    \end{equation}
+\onslide<4->
+    \begin{equation}
+        (Xx \leftrightarrow x \not \in x) \rightarrow \Box \forall y \neg Set(y, X)
+    \end{equation}
+\onslide<5->
+ Hence the need for free logic.
+
+\onslide<6-> UI = $\forall x [\forall y \varphi y \rightarrow \varphi x]$; 
+
+\onslide<7-> Instantiation requires assumption of existence.
+\end{frame}
+\begin{frame}
+    \frametitle{Relative Consistency}
+\begin{itemize}
+    \item In fact ZFC interprets $\mathsf{L}$.
+\end{itemize}
+\onslide<2->
+\begin{block}{$t : \mathcal{L}_0 \times V \to \mathcal{L}_\in, (\varphi, T) \mapsto \psi(T)$}
+    \begin{itemize}
+        \item<3-> assign plural variables odd numbered variables $t(X)$.
+        \item<4-> membership claims = id, commutes with propositional connectives
+        \item<5-> $t(Xx)(T) := x \in t(X)$
+        \item<6-> $t(\forall x \varphi)(T) := \forall x \in T [t(\varphi)(T)]$
+        \item<7-> $t(\forall X \varphi)(T) := \forall x \subseteq T [t(\varphi)(T)]$
+        \item<8-> $t(\Box \varphi)(t) := \forall S \supseteq T [Tran (S) \rightarrow t(\varphi)(S)]$
+    \end{itemize}
+\end{block}
+\onslide<9->
+\begin{block}{Theorem}
+  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash \forall X tran(X) \rightarrow t(\varphi)(X)$  
+\end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Converse Translation}
+\onslide<2->
+\begin{block}{Mirroring theorem}
+\onslide<3-> For $\varphi$ in $\mathcal{L}_\in$, let $\varphi^\diamond$ be the result of 
+prefixing all universal quantifiers by a $\Box$ 
+(and existential quantifiers by $\Diamond$.) Then we have 
+\onslide<4->
+\[
+    \Gamma \vdash_{FOL} \varphi 
+    \Leftrightarrow 
+    \Gamma^\diamond \vdash_{\mathsf{L}} \varphi^\diamond
+\]
+\end{block}
+\onslide<5-> Note on replacement$^\diamond$.
+\onslide<6->
+\begin{block}{Linnebo Interpretation Theorem}
+  $\mathsf{L} \vdash ZFC^\diamond$.  
+\end{block}
+\onslide<7-> Proof: use mirroring.
+\end{frame}
+\begin{frame}
+    \frametitle{Axioms for the theory $\mathsf{L}$}
+    \begin{block}{Logical Axioms}
+    \begin{enumerate}
+        \item Free FO logic
+        \item $\mathsf{S4.2}$ modal logic + CBF
+        \item $\forall z[Xz \leftrightarrow Yz] \rightarrow X = Y$, rigidity,
+        Choice, Comp
+    \end{enumerate}
+    \end{block}
+    \begin{block}{Set-theoretic axioms}
+        \begin{enumerate}
+        \item Extensionality, $\in$-rigidity, foundation
+        \item $\Box \forall X \Diamond \exists x [Set(x, X)]$
+        \item $\Diamond \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
+        \item $\Diamond \exists X \Box \forall x[Xx \leftrightarrow x \subseteq y]$
+        \item A modal translation of replacement
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mini-conclusion}
+\onslide<2->
+\begin{block}{Equivalence}
+    We have an exact proof-theoretic equivalence, $\mathsf{L} \equiv ZFC$.
+\end{block}
+\onslide<3->
+\begin{block}{Bi-interpretation}
+    In fact, ZFC $\vdash t(\phi^\diamond)(\emptyset) \leftrightarrow \phi$, and conversely.
+\end{block}
+\end{frame}
+
+\section{Height and Width Potentialism}
+\begin{frame}
+    \frametitle{Motivation}
+    \begin{itemize}
+        \item<2->   Imagine one has the ability to take things and 
+                    make a set containing them.
+        \item<3->   Imagine one is also able to take a partial order and add a filter 
+                    meeting all its (current) dense sets; 
+        \item<4->   Or, equivalently, to take some things and add an enumerating function.
+        \item<5->   Axiomatize this conception and work out its non-modal counterpart.
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Language}
+    \begin{block}{The Language $\mathcal{L}_1$}
+        \begin{itemize}
+            \item object variables $x, y, z$
+            \item<2-> plural variables $X, Y, Z$
+            \item<3-> $\wedge, \neg, \forall, =$
+            \item<4-> $\bu$, $\bl$, $\Box$
+            \item<5-> $\in$
+        \end{itemize} 
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Axioms for the theory $\mathsf{M}$}
+    \begin{block}{Logical Axioms}
+    \begin{enumerate}
+        \item<2-> Free FO logic
+        \item<3-> $\mathsf{S4.2}$ modal logic + CBF for each modal
+        \item<4-> $\Box \varphi \rightarrow \bu \varphi$, same for $\bl$.
+        \item<5-> Ext for $X$, $\Diamond Xx \rightarrow \Box Xx$, 
+        $\Diamond \exists x[Xx \wedge x = y] \rightarrow \exists x[Xx \wedge x = y]$,
+        Choice, Comp
+    \end{enumerate}
+    \end{block}
+    \onslide<6->
+    \begin{block}{Set-theoretic axioms}
+        \begin{enumerate}
+        \item<7-> Extensionality, $\in$-rigidity, foundation
+        \item<8-> $\Box \forall X \du \exists x [Set(x, X)]$
+        \item<9-> $\du \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
+        \item<10-> $\du \exists X \bu \forall x[Xx \leftrightarrow x \subseteq y]$
+        \item<11-> $\Box \forall \mathbb{P}, X [D(\mathbb{P}, X)\rightarrow \dl \exists g[Fmeets(g, xx)]]$
+        \item<12-> A modal translation of replacement
+        \end{enumerate}
+    \end{block}
+\end{frame}
+\begin{frame}{Some basic facts}
+    \begin{itemize}
+        \item<2-> $\mathsf{M}$ interprets ZFC under the translation 
+                    $\varphi \mapsto \varphi^{\diamond_\uparrow}$. 
+        \item<3-> $\mathsf{M}$ interprets ZFC$^-$ under the translation 
+                    $\varphi \mapsto \varphi^\diamond$.
+        \item<4-> $\mathsf{M}$ proves $\neg Pow^\diamond$.
+        \item<5-> $\mathsf{M}$ proves $V = HC^\diamond$ and hence $SOA^\diamond$.
+        \item<6-> $\mathsf{M}$ proves it is possible for the continuum 
+                    to exist and have a cardinality at least as great as 
+                    any $\aleph$ number whose existence is provable 
+                    in ZFC.
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Inconsistency?}
+The axioms imply 
+\[
+    \Diamond \exists x (\Diamond_\leftarrow \exists y[y \subseteq x \wedge y = z] \wedge \Box_\uparrow \neg \exists y[y = z])
+\]
+\onslide<2-> 
+abbreviate the formula in parentheses by $\Psi(x, z)$. 
+
+\onslide<3-> 
+By comprehension,
+\[
+    \Diamond \exists x \Psi(x, z) \wedge \exists X \forall y[Xy \leftrightarrow y \in z]
+\]
+
+\onslide<4-> 
+By height potentialism/rigidty,
+\[
+    \Diamond \exists x \Psi(x, z) \wedge \du \exists w \forall y[y \in w \leftrightarrow y \in z]
+\]
+\onslide<5-> But then the rigidity/extensionality imply $w = z$ after all, 
+so we have a contradiction.
+\end{frame}
+\begin{frame}
+    \frametitle{Resolution}
+The argument just sketched uses comprehension with arbitrary parameters:
+\[\exists X\forall y[Xy \leftrightarrow y \in z]\]
+\onslide<2-> And in the crucial application, it applies when we have no 
+\emph{a priori} guarantee $z$ even exists (indeed this is what we are trying 
+to establish.)
+\onslide<3-> Natural solution: restrict comp to closed form:
+\[
+    \Box \forall z \Box \forall Z \exists X \forall y[Xy \leftrightarrow \varphi(y, z, Z)]
+\]
+\onslide<4-> Amounts to restricting ourselves to parameters that exist at 
+the world of evaluation.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Relative Consistency}
+\begin{block}{Intuitive idea}
+    \onslide<2-> (From now on, I will ignore the difference between SOA 
+    and ZFC$^-$+ V = HC. Replacement is formulated as collection.)
+    \begin{itemize}
+    \item<3-> We will use the fact that $\mathsf{T}$ = SOA + $\Pi_1^1$-PSP 
+    $\equiv$ ZFC, and in fact $\mathsf{T}$ proves that $L[r]$ is a 
+    model of ZFC for every real $r$. 
+    \item<4-> 
+    Our translation will be doubly parameterized, once by a real and 
+    once by a transitive set.
+    \item<5->
+    Our interpretation for $\du$ will involve holding $r$ fixed and 
+    climbing transitive sets in $L[r]$;
+    \item<6-> 
+    while our interpretation for $\dl$ will involve allowing new reals 
+    to be added but not extending the height of the transitive set parameter.
+    \end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Relative consistency}
+    \onslide<2-> Let $M \vDash SOA + \Pi_1^1 PSP$.
+    \onslide<3->
+    \begin{block}{$t : \mathcal{L}_1 \times M \times \mathbb{R}^M \to \mathcal{L}_\in, (\varphi, T, r) \mapsto \psi(T, r)$}
+        \begin{itemize}
+            \item<4-> assign plural variables odd numbered variables $t(X)$.
+            \item<5-> Membership = id, commutes with propositional connectives 
+            \item<6-> $t(Xx)(T, r) := x \in t(X)$
+            \item<7-> $t(\forall x \varphi)(T, r) := \forall x \in T [t(\varphi)(T, r)]$
+            \item<8-> $t(\forall X \varphi)(T, r) := \forall x \subseteq T [x \in L[r] \rightarrow t(\varphi)(T, r)]$
+            \item<9-> $t(\bu \varphi)(T, r) := \forall S \supseteq T [Tran(S) \wedge S \in L[r] \rightarrow t(\varphi)(S, r)]$
+            \item<10-> $t(\bl \varphi)(T, r) := \forall s[ r \in L[s] \rightarrow \forall S[ S \leq T \wedge S \in L[s] \rightarrow t(\varphi)(S, s)]]$
+        \end{itemize}
+    \end{block}
+    \onslide<11->
+\begin{block}{Theorem}
+  $\mathsf{M} \vdash \varphi$ implies $\mathsf{T} \vdash \forall r, X[ r \in \mathbb{R} \wedge Tran(X) \rightarrow t(\varphi)(X, r)]$  
+\end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Converse Translation}
+\onslide<2->
+\begin{block}{Theorem}
+$\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
+\end{block}
+\onslide<3->
+\begin{block}{Proof (sketch)}
+    \onslide<4-> Given any possible real $r$, one can show $\Diamond \exists x[ x = \mathbb{R}^{L[r]}]$
+    using the $\Diamond_\uparrow$ translation of ZFC and some absoluteness lemmas. 
+    \onslide<5-> One can also show by forcing that ``$\Diamond \mathbb{R}^{L[r]} \text{ is countable}$.''
+    \onslide<6-> This yields the $\Diamond$-translation of ``$\mathbb{R}^{L[r]}$ exists for every $r$, and is coutnable.''
+    \onslide<7-> By a result of Solovay, if only countably many reals are constructible 
+    from $r$, then the $\Pi_1^1[r]$ PSP holds.
+    \onslide<8-> Hence by mirroring $\Pi_1^1[r] PSP^\diamond$.
+    \onslide<9-> But $r$ is arbitrary.
+    
+\end{block}
+\end{frame}
+\section{Concluding Remarks}
+\begin{frame}{Conclusions}
+    \onslide<2->
+    \begin{block}{Equivalence}
+        We have an exact proof-theoretic equivalence, $\mathsf{M} \equiv SOA + \Pi_1^1 PSP$.
+
+        \onslide<3-> The latter is in fact equiconsistent with ZFC. $\mathsf{M} \equiv \mathsf{L} \equiv ZFC$.
+    \end{block}
+    \onslide<4->
+    \begin{block}{Bi-interpretation}
+        However, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\diamond)(\emptyset, 0) \leftrightarrow \phi$, and conversely.
+    \end{block}
+    \onslide<5->
+    \begin{block}{Philosophical Interest?}
+        There seems to be some relation between height + width potentialism 
+        and topological regularity.
+
+        \onslide<6-> The `first order picture' corresponding to the height + width 
+        potentialist view may be second order arithmetic + topological regularity.
+
+        \onslide<7-> What happens with stronger regularity properties? How does 
+        PD/AD affect things?
+    \end{block}
+\end{frame}
+
+\begin{frame}
+\Huge{\centerline{Thanks!}}
+\end{frame}
+
+\end{document} 
