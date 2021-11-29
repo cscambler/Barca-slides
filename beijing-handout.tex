@@ -238,7 +238,7 @@ Oxford University \\
 \end{block}
 \onslide<9->
 \begin{block}{Theorem}
-  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash \forall X tran(X) \rightarrow t(\varphi)(X)$  
+  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash Tran(X) \rightarrow t(\varphi)(X)$  
 \end{block}
 \end{frame}
 \begin{frame}
@@ -291,7 +291,7 @@ prefixing all universal quantifiers by a $\Box$
 \end{block}
 \onslide<3->
 \begin{block}{Bi-interpretation}
-    In fact, ZFC $\vdash t(\phi^\diamond)(\emptyset) \leftrightarrow \phi$, and conversely.
+    In fact, ZFC $\vdash Tran(X) \rightarrow t(\phi^\diamond)(X) \leftrightarrow \phi$, and conversely.
 \end{block}
 \end{frame}
 
@@ -338,7 +338,7 @@ prefixing all universal quantifiers by a $\Box$
         \item<8-> $\Box \forall X \du \exists x [Set(x, X)]$
         \item<9-> $\du \exists X \Box \forall x[Xx \leftrightarrow \mathbb{N}x]$
         \item<10-> $\du \exists X \bu \forall x[Xx \leftrightarrow x \subseteq y]$
-        \item<11-> $\Box \forall \mathbb{P}, X [D(\mathbb{P}, X)\rightarrow \dl \exists g[Fmeets(g, xx)]]$
+        \item<11-> $\Box \forall \mathbb{P}, X [D(\mathbb{P}, X)\rightarrow \dl \exists g[Fmeets(g, X)]]$
         \item<12-> A modal translation of replacement
         \end{enumerate}
     \end{block}
@@ -433,7 +433,7 @@ the world of evaluation.
     \end{block}
     \onslide<11->
 \begin{block}{Theorem}
-  $\mathsf{M} \vdash \varphi$ implies $\mathsf{T} \vdash \forall r, X[ r \in \mathbb{R} \wedge Tran(X) \rightarrow t(\varphi)(X, r)]$  
+  $\mathsf{M} \vdash \varphi$ implies $\mathsf{T} \vdash \mathbb{R}(r) \wedge Tran(X) \wedge X \in L[r] \rightarrow t(\varphi)(X, r)$  
 \end{block}
 \end{frame}
 \begin{frame}
@@ -465,7 +465,8 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
     \end{block}
     \onslide<4->
     \begin{block}{Bi-interpretation}
-        However, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\diamond)(\emptyset, 0) \leftrightarrow \phi$, and conversely.
+        However, SOA + $\Pi_1^1 PSP$ $\vdash \mathbb{R}(r) \wedge Tran(X) \wedge X \in L[r] \rightarrow t(\phi^\diamond)(X, r) \leftrightarrow \phi$; 
+        whether the converse holds is still open.
     \end{block}
     \onslide<5->
     \begin{block}{Philosophical Interest?}
