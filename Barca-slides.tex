@@ -178,7 +178,7 @@ Oxford University \\
     \begin{block}{Logical Axioms}
     \begin{enumerate}
         \item<2-> Free FO logic
-        \item<3-> $\mathsf{S4.2}$ modal logic + CBF
+        \item<3-> $\mathsf{S4.2}$ modal logic + CBF (or free $\mathsf{S5}$)
         \item<4-> $\forall z[Xz \leftrightarrow Yz] \rightarrow X = Y$, rigidity,
         Choice, Comp
     \end{enumerate}
@@ -228,12 +228,12 @@ Oxford University \\
 \onslide<2->
 \begin{block}{$t : \mathcal{L}_0 \times V \to \mathcal{L}_\in, (\varphi, T) \mapsto \psi(T)$}
     \begin{itemize}
-        \item<3-> assign plural variables odd numbered variables $t(X)$.
+        \item<3-> assign singular/plural variables even/odd numbered variables $t(x), t(X)$. (!)
         \item<4-> membership claims = id, commutes with propositional connectives
-        \item<5-> $t(Xx)(T) := x \in t(X)$
+        \item<5-> $t(Xx)(T) := t(x) \in t(X)$
         \item<6-> $t(\forall x \varphi)(T) := \forall x \in T [t(\varphi)(T)]$
         \item<7-> $t(\forall X \varphi)(T) := \forall x \subseteq T [t(\varphi)(T)]$
-        \item<8-> $t(\Box \varphi)(t) := \forall S \supseteq T [Tran (S) \rightarrow t(\varphi)(S)]$
+        \item<8-> $t(\Box \varphi)(T) := \forall S \supseteq T [Tran (S) \rightarrow t(\varphi)(S)]$
     \end{itemize}
 \end{block}
 \onslide<9->
@@ -324,7 +324,7 @@ prefixing all universal quantifiers by a $\Box$
     \begin{block}{Logical Axioms}
     \begin{enumerate}
         \item<2-> Free FO logic
-        \item<3-> $\mathsf{S4.2}$ modal logic + CBF for each modal
+        \item<3-> $\mathsf{S4.2}$ modal logic + CBF for each modal (or free S5)
         \item<4-> $\Box \varphi \rightarrow \bu \varphi$, same for $\bl$.
         \item<5-> $\forall z[Xz \leftrightarrow Yz] \rightarrow X = Y$, rigidity,
         Choice, Comp
