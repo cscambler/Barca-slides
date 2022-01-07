@@ -230,7 +230,7 @@ Oxford University \\
     \begin{itemize}
         \item<3-> assign singular/plural variables even/odd numbered variables $t(x), t(X)$. (!)
         \item<4-> membership claims = id, commutes with propositional connectives
-        \item<5-> $t(Xx)(T) := t(x) \in t(X)$
+        \item<5-> $t(Xx)(T) := t(x) \in t(X) \subseteq T$
         \item<6-> $t(\forall x \varphi)(T) := \forall x \in T [t(\varphi)(T)]$
         \item<7-> $t(\forall X \varphi)(T) := \forall x \subseteq T [t(\varphi)(T)]$
         \item<8-> $t(\Box \varphi)(T) := \forall S \supseteq T [t(\varphi)(S)]$
@@ -246,8 +246,8 @@ Oxford University \\
 \onslide<2->
 \begin{block}{Mirroring theorem}
 \onslide<3-> For $\varphi$ in $\mathcal{L}_\in$, let $\varphi^\diamond$ be the result of 
-prefixing all universal quantifiers by a $\Box$ 
-(and existential quantifiers by $\Diamond$.) Then we have 
+prefixing all atomic formulas and existential quantifiers by $\Diamond$
+(and universal quantifiers by $\Box$.) Then we have 
 \onslide<4->
 \[
     \Gamma \vdash_{FOL} \varphi 
@@ -291,11 +291,11 @@ prefixing all universal quantifiers by a $\Box$
 \end{block}
 \onslide<3->
 \begin{block}{Bi-interpretation}
-    In fact, ZFC $\vdash (\forall X [Tran(X) \rightarrow t(\phi^\diamond)(X)]) \leftrightarrow \phi$;
-    \onslide<4->and \\ L$^+$ $\vdash (\forall X[ Tran(X) \rightarrow t(\phi)(X)])^\Diamond \leftrightarrow \phi$
+    In fact, ZFC $\vdash t(\phi^\diamond)(T)]) \leftrightarrow \phi$;
+    \onslide<4->and \\ L$^+$ $\vdash Univ(T) \rightarrow (t(\phi)(T)^\Diamond \leftrightarrow \phi)$
 \end{block}
 \onslide<5->
-This is something like what Button calls near-synonymy (near-near-synonmy, I guess.)
+This is something like what Button calls `near-synonymy'.
 \end{frame}
 
 \section{Height and Width Potentialism}
@@ -468,8 +468,8 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
     \end{block}
     \onslide<4->
     \begin{block}{Bi-interpretation}
-        However, SOA + $\Pi_1^1 PSP$ $\vdash \mathbb{R}(r) \wedge Tran(X) \wedge X \in L[r] \rightarrow t(\phi^\diamond)(X, r) \leftrightarrow \phi$; 
-        whether the converse holds is still open.
+        As before, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\diamond)(X, r) \leftrightarrow \phi$; 
+        \onslide<5-> but, whether the converse holds is rather doubtful. (Related to `inconsistency'.)
     \end{block}
     \onslide<5->
     \begin{block}{Philosophical Interest?}
