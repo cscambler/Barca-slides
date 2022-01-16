@@ -236,27 +236,28 @@ Oxford University \\
 \end{block}
 \onslide<9->
 \begin{block}{Theorem}
-  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash \forall X [Tran(X) \rightarrow t(\varphi)(X)]$  
+  $\mathsf{L} \vdash \varphi$ implies $ZFC \vdash t(\varphi)(T)]$  
 \end{block}
+\onslide<10-> Note: convention on variables $T, S$.
 \end{frame}
 \begin{frame}
     \frametitle{Converse Translation}
 \onslide<2->
 \begin{block}{Mirroring theorem}
-\onslide<3-> For $\varphi$ in $\mathcal{L}_\in$, let $\varphi^\diamond$ be the result of 
+\onslide<3-> For $\varphi$ in $\mathcal{L}_\in$, let $\varphi^\Diamond$ be the result of 
 prefixing all atomic formulas and existential quantifiers by $\Diamond$
 (and universal quantifiers by $\Box$.) Then we have 
 \onslide<4->
 \[
     \Gamma \vdash_{FOL} \varphi 
     \Leftrightarrow 
-    \Gamma^\diamond \vdash_{\mathsf{L}} \varphi^\diamond
+    \Gamma^\Diamond \vdash_{\mathsf{L}} \varphi^\Diamond
 \]
 \end{block}
-\onslide<5-> Note on replacement$^\diamond$.
+\onslide<5-> Note on replacement$^\Diamond$.
 \onslide<6->
 \begin{block}{Linnebo Interpretation Theorem}
-  $\mathsf{L} \vdash ZFC^\diamond$.  
+  $\mathsf{L} \vdash ZFC^\Diamond$.  
 \end{block}
 \onslide<7-> Proof: use mirroring.
 \end{frame}
@@ -289,11 +290,11 @@ prefixing all atomic formulas and existential quantifiers by $\Diamond$
 \end{block}
 \onslide<3->
 \begin{block}{Bi-interpretation}
-    In fact, ZFC $\vdash t(\phi^\diamond)(T)]) \leftrightarrow \phi$;
-    \onslide<4->and \\ L$^+$ $\vdash Univ(T) \rightarrow (t(\phi)(T)^\Diamond \leftrightarrow \phi)$
+    In fact, ZFC $\vdash t(\phi^\Diamond)(T) \leftrightarrow \phi$;
+    \onslide<4->and \\ L $\vdash Univ(T) \rightarrow (t(\phi)(T)^\Diamond \leftrightarrow \phi)$
 \end{block}
 \onslide<5->
-This is something like what Button calls `near-synonymy'.
+This is essentially what Button calls `near-synonymy'.
 \end{frame}
 
 \section{Height and Width Potentialism}
@@ -346,11 +347,11 @@ This is something like what Button calls `near-synonymy'.
 \begin{frame}{Some basic facts}
     \begin{itemize}
         \item<2-> $\mathsf{M}$ interprets ZFC under the translation 
-                    $\varphi \mapsto \varphi^{\diamond_\uparrow}$. 
+                    $\varphi \mapsto \varphi^{\Diamond_\uparrow}$. 
         \item<3-> $\mathsf{M}$ interprets ZFC$^-$ under the translation 
-                    $\varphi \mapsto \varphi^\diamond$.
-        \item<4-> $\mathsf{M}$ proves $\neg Pow^\diamond$.
-        \item<5-> $\mathsf{M}$ proves $V = HC^\diamond$ and hence $SOA^\diamond$.
+                    $\varphi \mapsto \varphi^\Diamond$.
+        \item<4-> $\mathsf{M}$ proves $\neg Pow^\Diamond$.
+        \item<5-> $\mathsf{M}$ proves $V = HC^\Diamond$ and hence $SOA^\Diamond$.
         \item<6-> $\mathsf{M}$ proves the universal possibility of forcing.
         \item<7-> e.g., it proves it is possible for the continuum 
                     to exist and have a cardinality at least as great as 
@@ -441,7 +442,7 @@ the world of evaluation.
     \frametitle{Converse Translation}
 \onslide<2->
 \begin{block}{Theorem}
-$\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
+$\mathsf{M} \vdash \Pi_1^1 PSP^\Diamond$
 \end{block}
 \onslide<3->
 \begin{block}{Proof (sketch)}
@@ -451,7 +452,7 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
     \onslide<6-> This yields the $\Diamond$-translation of ``$\mathbb{R}^{L[r]}$ exists for every $r$, and is coutnable.''
     \onslide<7-> By a result of Solovay, if only countably many reals are constructible 
     from $r$, then the $\Pi_1^1[r]$ PSP holds.
-    \onslide<8-> Hence by mirroring $\Pi_1^1[r] PSP^\diamond$.
+    \onslide<8-> Hence by mirroring $\Pi_1^1[r] PSP^\Diamond$.
     \onslide<9-> But $r$ is arbitrary.
     
 \end{block}
@@ -466,7 +467,7 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\diamond$
     \end{block}
     \onslide<4->
     \begin{block}{Bi-interpretation}
-        As before, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\diamond)(X, r) \leftrightarrow \phi$; 
+        As before, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\Diamond)(X, r) \leftrightarrow \phi$; 
         \onslide<5-> but, whether the converse holds is rather doubtful. (Related to `inconsistency'.)
     \end{block}
     \onslide<5->
