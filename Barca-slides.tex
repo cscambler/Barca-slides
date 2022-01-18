@@ -468,22 +468,23 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\Diamond$
 \end{block}
 \onslide<3->
 \begin{block}{Proof (sketch)}
-    \onslide<4-> Given any possible real $r$, one can show $\Diamond \exists x[ x = \mathbb{R}^{L[r]}]$
-    using the $\Diamond_\uparrow$ translation of ZFC and some absoluteness lemmas. 
-    \onslide<5-> One can also show by forcing that ``$\Diamond \mathbb{R}^{L[r]} \text{ is countable}$.''
-    \onslide<6-> This yields the $\Diamond$-translation of ``$\mathbb{R}^{L[r]}$ exists for every $r$, and is coutnable.''
-    \onslide<7-> By a result of Solovay, if only countably many reals are constructible 
-    from $r$, then the $\Pi_1^1[r]$ PSP holds.
-    \onslide<8-> Hence by mirroring $\Pi_1^1[r] PSP^\Diamond$.
-    \onslide<9-> But $r$ is arbitrary.
-    
+    \onslide<4-> Solovay: If only countably many reals are constructible from any $r$, then the $\Pi_1^1$-PSP 
+    holds. 
+
+    \onslide<5-> By mirroring, suffices to establish that (only countably many reals are constructible from $r$)$^\Diamond$ holds.
+
+    \onslide<6-> Since we have ZFC$^{\du}$, we get that (there is a set of all reals constructible from $r$)$^{\du}$.
+
+    \onslide<7-> Some absoluteness lemmas imply (there is a set of all reals constructible from $r$)$^\Diamond$.
+
+    \onslide<8-> Since (all sets are countable)$^\Diamond$, the result follows.
+
 \end{block}
 \end{frame}
-\section{Summary}
-\begin{frame}{Summary}
+\begin{frame}{Interpretations}
     \onslide<2->
     \begin{block}{Equivalence}
-        We have an exact proof-theoretic equivalence, $\mathsf{M} \equiv SOA + \Pi_1^1 PSP$.
+        We thus have an exact proof-theoretic equivalence, $\mathsf{M} \equiv SOA + \Pi_1^1 PSP$.
 
         \onslide<3-> The latter is in fact equiconsistent with ZFC. $\mathsf{M} \equiv \mathsf{L} \equiv ZFC$.
     \end{block}
@@ -495,39 +496,35 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\Diamond$
     \end{block}
 \onslide<6-> Thus we have at least `near'-near synonymy in this case. 
 
-\onslide<7-> Ultimately $\Diamond$ is more important than $\dl$ anyway, 
-so I'm not that bothered by the omission.
+\onslide<7-> The exact details of $\dl$ are incidental anyway; if we formulate the theory with just $\Diamond$ and $\du$, we will get near synonymy. 
 \end{frame}
 
-\begin{frame}{Philosophical Interest}
-    \onslide<5->
-    \begin{block}{Philosophical Interest?}
+\begin{frame}{Concluding remarks}
         \begin{itemize}
-        \item<2-> The `first order picture' corresponding to the height + width 
+        \item<2-> The `purely quantificational picture' corresponding to the height + width 
         potentialist view enshrined in $\mathsf{M}$ 
         seems to be second order arithmetic + $\Pi_1^1$ PSP.
         
-        \item<3-> In fact, using results of Krapf, one can show that the first order 
-            picture corresponding to strengthenings of $\mathsf{M}$ to include 
-            e.g measurable cardinals (in the sense of $\du$) correspond to 
-            strengthenings of $\Pi_1^1 PSP$ (e.g. $\Pi^1_2$-determinacy).
-        \item<4-> It seems plausible that full determinacy will have very strong 
-                large cardinal consequences, although at present I do not know
-                precisely how this will play out.
-        \item<5-> These results invite new consideration of second order arithmetic
-                together with topological regularity as a foundation for mathematics.
-        \item<6-> In terms of consistency strength such theories are strong. They are 
-                also mathematically natural and have salutary consequences in applied 
-                mathematics.
-        \item<7-> But they are also ontologically much more parsimonious in only allowing 
-                for countable infinities.
-        \item<8-> How strong is the case for such theories, compared e.g. to ZFC, in foundations?
-        \item<9-> I think it is strong; and correspondingly, that  a strong case can be made 
-                    for height and width potentialism in the modal setting.
+        \item<3-> What happens if we strengthen the regularity properties? 
+        \item<4-> You get more large cardinals in inner models.
+        \item<5-> In the modal theory, this corresponds to the $\du$-possibility of large cardinals.
         \end{itemize}
-    \end{block}
-    
 \end{frame}
+
+\begin{frame}{Concluding remarks}
+    \begin{itemize}
+    \item These results have led me to consider second order arithmetic + regularity properties 
+            as a possible `foundation for mathematics'.
+    \item<2-> Such theories are strong in terms of consistency strength, and can interpret substantial portions 
+            of the traditional large cardinal hierarchy.
+    \item<3-> But they are also ontologically parsimonious, in only admitting countable sets, and offer hope   of certain benefits in applied mathematics -- e.g. the possibility of universal lebesgue measurability.
+    \item<4-> Traditionally, the stronger regularity properties are believed to hold only in inner models, while the large cardinals are in the `real' universe of sets.
+    \item<5-> But I am not convinced that there are decisive reasons for taking one of these theories, rather than the other, to hold only in inner models. 
+    \item<6-> The potentialist perspective enshrined in $M$, and the regularity perspective in $T$, provide two 
+    tightly equivalent ways of fleshing out the alternative viewpoint.
+    \end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \Huge{\centerline{Thanks!}}
