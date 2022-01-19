@@ -399,24 +399,27 @@ the world of evaluation.
 
 \begin{frame}
     \frametitle{Relative Consistency}
-\begin{block}{Key Point}
+\onslide<2-> \begin{block}{Key Point}
     \onslide<2-> It turns out that $\mathsf{M}$ exhibits roughly the same 
     relation to second order arithmetic together with the $\mathbf{\Pi}_1^1$
-    -\emph{Perfect Set Property} as $\mathsf{L}$ to ZFC.
+    -\emph{Perfect Set Property} as $\mathsf{L}$ did to ZFC.
 \end{block}
-\begin{itemize}
-    \item<3-> A set of reals is \emph{perfect} iff it is closed and has 
-            no isolated points. There are only $2^{\aleph_0}$ such sets.
-    \item<4-> A set of reals is said to \emph{have the perfect set property} iff it is 
-            countable, or has a perfect subset.
-    \item<5-> E.g. every closed set has the PSP.
-    \item<6-> If the reals can be well-ordered (AC), not all sets have the PSP.
-    \item<7-> The $\Gamma$-PSP is the assertion that every set of reals defined by a 
-            formula of type $\Gamma$ has the PSP.
-    \item<8-> The $\Gamma$-PSP implies no formula in $\Gamma$ defines a well-order of 
-                the reals.
-    \item<9-> $\Gamma$-definable sets are thus `regular' or `well behaved'.
-\end{itemize}
+\end{frame}
+
+\begin{frame}{Background on PSP}
+    \begin{itemize}
+        \item<2-> A set of reals is \emph{perfect} iff it is closed and has 
+                no isolated points. There are only $2^{\aleph_0}$ such sets.
+        \item<3-> A set of reals is said to \emph{have the perfect set property} iff it is 
+                countable, or has a perfect subset.
+        \item<4-> E.g. every closed set has the PSP.
+        \item<5-> If the reals can be well-ordered (AC), not all sets have the PSP.
+        \item<6-> The $\Gamma$-PSP is the assertion that every set of reals defined by a 
+                formula of type $\Gamma$ has the PSP.
+        \item<7-> The $\Gamma$-PSP implies no formula in $\Gamma$ defines a well-order of 
+                    the reals.
+        \item<8-> $\Gamma$-definable sets are thus `regular' or `well behaved'.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -430,7 +433,7 @@ the world of evaluation.
     model of ZFC for every real $r$. 
     \item<4-> 
     Our translation will be doubly parameterized, once by a real and 
-    once by a transitive set.
+    once by a transitive set. (These are the `worlds' in the sense of the interp)
     \item<5->
     Our interpretation for $\du$ will involve holding $r$ fixed and 
     climbing transitive sets in $L[r]$;
@@ -490,8 +493,11 @@ $\mathsf{M} \vdash \Pi_1^1 PSP^\Diamond$
     \end{block}
     \onslide<4->
     \begin{block}{Bi-interpretation}
-        As before, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\Diamond)(X, r) \leftrightarrow \phi$; 
-        \onslide<5-> We also have a partial converse: for the language without $\dl$,
+        As before, SOA + $\Pi_1^1 PSP$ $\vdash t(\phi^\Diamond)(X, r) \leftrightarrow \phi$.
+        
+        \onslide<5-> We also have a partial converse: 
+        
+        \emph{for the language without $\dl$},
         M $\vdash Univ(T) \rightarrow (t(\phi)(T)^\Diamond \leftrightarrow \phi)$
     \end{block}
 \onslide<6-> Thus we have at least `near'-near synonymy in this case. 
